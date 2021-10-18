@@ -2,10 +2,10 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-           'us-central1-docker.pkg.dev/${PROJECT_ID}/docker-repo/myapi',
+           'us-central1-docker.pkg.dev/${PROJECT_ID}/docker/myapi',
            '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', '-image',
-           'us-central1-docker.pkg.dev/${PROJECT_ID}/docker-repo/myapi']
+           'us-central1-docker.pkg.dev/${PROJECT_ID}/docker/myapi']
