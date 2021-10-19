@@ -1,0 +1,21 @@
+# Make sure you have downloaded and built the Helm image once.
+# https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/helm
+
+steps:
+  # Helm Install
+  - name: 'gcr.io/${PROJECT_ID}/helm'
+    args: ['upgrade', '--install', 
+        '$_CUSTOMER_NAME', './helm-chart',
+        '-n', 'myapi',
+        '--set', 'image.tag=$_TAG_NAME', 
+        '--set', 'ingress.host=$_CUSTOMER_NAME.dev.sneto.ca',
+        '--set', 'customerName=$_CUSTOMER_NAME'
+      ]
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=$_REGION'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER'
+
+tags:
+  - $_CUSTOMER_NAME
+  - $_TAG_NAME
+  - $_CLUSTER
