@@ -15,5 +15,9 @@ $ gcloud builds submit  . --config=cloudbuild_ci.yaml --substitutions=TAG_NAME=1
 
 3. Trigger Cloud Build CD job to build the app and store in Artifact Registry.
 ```
+<<<<<<< HEAD
 $ gcloud builds submit  . --config=cloudbuild_cd.yaml --substitutions=_CLUSTER=gke-dev,_REGION=us-central1,_CUSTOMER_NAME=joao,_TAG_NAME=1
+=======
+$ gcloud builds submit  . --config=cloudbuild_cd.yaml --substitutions=_CLUSTER=gke-dev,_REGION=us-central1,_RELEASE_NAME=joao,_TAG_NAME=1
+>>>>>>> e288913d9a433ea0838ecbb4afea42310dbf3475
 ```
