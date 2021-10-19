@@ -1,7 +1,7 @@
 # myapi
 Example of CI/CD with GCP using Cloud Build, Artifact Registry, and GKE.
 
-# Build
+# Build & Deploy
 
 1. Clone the repo
 ```
